@@ -1,9 +1,13 @@
 # Applozic-PhoneGap-Chat-Plugin
-PhoneGap Real Time Chat & Messaging Plugin
+PhoneGap Real Time Chat & Messaging Plugin 
+
+Applozic powers real time messaging across any device, any platform & anywhere in the world. Integrate our simple SDK to engage your users with image, file, location sharing and audio/video conversations.
+
+Signup at [Applozic](https://www.applozic.com/) to get your application key.    
 
 Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
 
-Step 2: Add the following under <head> tag:
+Step 2: Add the following under ```<head>``` tag:
 
 ```
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'"> 
@@ -329,3 +333,18 @@ Step 6: Push notification registration
 				    }
 		});
 ```
+
+
+##Help
+
+We provide support over at [StackOverflow] (http://stackoverflow.com/questions/tagged/applozic) when you tag using applozic, ask us anything.
+
+Applozic is the best ios chat sdk for instant messaging, still not convinced? Write to us at github@applozic.com and we will be happy to schedule a demo for you.
+
+##Github projects
+
+Android Chat SDK https://github.com/AppLozic/Applozic-Android-SDK
+
+Web Chat Plugin https://github.com/AppLozic/Applozic-Web-Plugin
+
+iOS Chat SDK https://github.com/AppLozic/Applozic-iOS-SDK
