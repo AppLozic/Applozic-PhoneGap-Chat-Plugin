@@ -334,6 +334,13 @@ Step 6: Push notification registration
 		});
 ```
 
+More function details are available here: https://www.applozic.com/developers.html#applozic-web-plugin-getting-started
+(Ignore first 3 steps in the above links).
+
+##Demo page
+
+Demo chat code: https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/blob/master/www/index.html
+
 
 ##Help
 
