@@ -1,0 +1,76 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "195932243324",
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        }
+    },
+    "dependent_plugins": {}
+}

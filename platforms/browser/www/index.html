@@ -338,8 +338,6 @@
             }
             $(document).ready(function () {
 
-	             //$("#chat-form").submit(function () {
-
 	             $("#chat-submit").click(function() {
 	             	
 	             	//Function to initialize chat plugin
@@ -353,15 +351,67 @@
 	                    desktopNotification: true,
 	                    locShare: false,
 	                    googleApiKey: "AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4",
-	                    onInit: function() {  $applozic.fn.applozic('loadTab', ''); }
+	                    onInit: function() {  
+		                    	$applozic.fn.applozic('loadTab', ''); 
+		                    	registerPushNotifications();
+	                    	}
 	                });
+
 
 	                // var contactjson = {"contacts": [{"userId": "user1", "displayName": "Devashish", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};
 	                // To load contact list use below function and pass contacts json in format shown above in variable 'contactjson'. 
 	                // $applozic.fn.applozic('loadContacts', contactjson);
 
 	             });
-            });
+	      });
+
+		function registerPushNotifications() {
+			var push = PushNotification.init({
+						  androind: {
+						    senderID: '195932243324'
+						  },
+						  ios: {
+						    alert: true,
+						    badge: true,
+						    sound: true
+						  }
+					});
+					push.on('registration', function(data) {
+						  if (!Kinvey.getActiveUser()) {
+						    console.log('No active user.');
+						  } else {
+						    Kinvey.Push.register(data.registrationId).then(function() {
+						      console.log('Device has been registered.');
+
+						       var userPxy = {
+				                    'applicationId': 'applozic-sample-app',
+				                    'userId': $("#userId").val(),
+				                    'registrationId': data.registrationId,
+				                    'pushNotificationFormat' : '1'
+				                };
+						      $.ajax({
+				                    url: "https://apps.applozic.com/rest/ws/register/client",
+				                    type: 'post',
+				                    data: w.JSON.stringify(userPxy),
+				                    contentType: 'application/json',
+				                    headers: {'Application-Key': 'applozic-sample-app'},
+				                    success: function (result) {
+				                    	console.log(result);
+				                    }
+				                });
+
+						    }).catch(function(error) {
+						      console.error(error);
+						    });
+						  }
+					});
+
+					push.on('notification', function(data) {
+					  console.log(data);
+					});
+
+		}
+
         </script>
 </body>
 
