@@ -29,11 +29,24 @@
 </head>
 
 <body>
-	<a href="#">
-	    <div class="section-main app applozic-launcher mck-button-launcher">
-	        <h1>Applozic PhoneGap Chat Demo</h1>
+
+	    <div class="section-center">
+	    	<div class="">
+				<h2>Applozic PhoneGap Chat Demo</h2>
+			</div>
+			<br><br>
+	    	<form id="chat-form" class="ph35">
+				<div class="form-group">
+				     <label for="userId">Enter your UserId</label><br>
+				     <input type="text" class="form-control" id="userId" name="userId" value = "demo" required>
+				</div>
+			    <br><br>
+				<div class="form-group mb-30">
+					<button id="chat-submit" type="button" class="btn btn-green pd-12 w-full">Launch Plugin</button>
+				</div>
+			</form>
 	    </div>
-    </a>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -324,23 +337,30 @@
                 }
             }
             $(document).ready(function () {
-                //Function to initialize plugin
-                $applozic.fn.applozic({userId: 'demo', userName: 'Demo User', appId: 'applozic-sample-app',
-                    ojq: $original,
-                    readConversation: readMessage, // readMessage function defined above
-                    contactDisplayName: displayName, // displayName function defined above
-                    contactDisplayImage: contactImageSrc, // contactImageSrc function defined above
-                    onInit: onInitialize, //callback function execute on plugin initialize
-                    maxAttachmentSize: 25, //max attachment size in MB
-                    desktopNotification: true,
-                    locShare: false,
-                    googleApiKey: "AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4"
-                });
 
-                // var contactjson = {"contacts": [{"userId": "user1", "displayName": "Devashish", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};
-                // To load contact list use below function and pass contacts json in format shown above in variable 'contactjson'. 
-                // $applozic.fn.applozic('loadContacts', contactjson);
+	             //$("#chat-form").submit(function () {
 
+	             $("#chat-submit").click(function() {
+	             	
+	             	//Function to initialize chat plugin
+	                $applozic.fn.applozic({userId: $("#userId").val(), userName: 'Demo User', appId: 'applozic-sample-app',
+	                    ojq: $original,
+	                    readConversation: readMessage, // readMessage function defined above
+	                    contactDisplayName: displayName, // displayName function defined above
+	                    contactDisplayImage: contactImageSrc, // contactImageSrc function defined above
+	                    onInit: onInitialize, //callback function execute on plugin initialize
+	                    maxAttachmentSize: 25, //max attachment size in MB
+	                    desktopNotification: true,
+	                    locShare: false,
+	                    googleApiKey: "AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4",
+	                    onInit: function() {  $applozic.fn.applozic('loadTab', ''); }
+	                });
+
+	                // var contactjson = {"contacts": [{"userId": "user1", "displayName": "Devashish", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user2", "displayName": "Adarsh", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}, {"userId": "user3", "displayName": "Shanki", "imageLink": "https://www.applozic.com/resources/images/applozic_icon.png"}]};
+	                // To load contact list use below function and pass contacts json in format shown above in variable 'contactjson'. 
+	                // $applozic.fn.applozic('loadContacts', contactjson);
+
+	             });
             });
         </script>
 </body>
