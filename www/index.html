@@ -119,7 +119,7 @@
                                     <div class="blk-lg-2">
                                         <div class="mck-dropdown-toggle" data-toggle="mckdropdown" aria-expanded="true">
                                             <img src="applozic/css/app/images/mck-icon-menu.png" alt="Tab Menu">
-                                        </div>
+                                        </div>/
                                         <ul id="mck-tab-menu-list" class="mck-dropdown-menu mck-tab-menu-box menu-right" role="menu">
                                             <li class="mck-tab-message-option">  
                                                 <a href="#" id="mck-delete-button" class="mck-delete-button menu-item" title="Delete All">
@@ -213,15 +213,7 @@
                                                     <button type="submit" id="mck-msg-sbmt" class="mck-btn mck-btn-text-panel" title="Send Message"><span class="mck-icon-send"></span></button>
                                                 </div>
                                             </div>
-                                            <div id="mck-file-box" class="mck-file-box row-fluid n-vis">
-                                                <div class="mck-file-expr">
-                                                    <span class="mck-file-content blk-lg-8"><span class="mck-file-lb"></span>&nbsp;<span class="mck-file-sz"></span></span>
-                                                    <span class="progress progress-striped active blk-lg-3" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-bar progress-bar-success bar"></span></span>
-                                                    <span class="move-right">
-                                                        <button type="button" class="mck-box-close mck-remove-file" data-dismiss="div" aria-hidden="true">x</button>
-                                                    </span>
-                                                </div>
-                                            </div>
+                                            <div id="mck-file-box" class="n-vis"></div>
                                         </div>
                                     </div>
                                 </form>
@@ -293,6 +285,7 @@
         </div>
 
 
+
         <script type="text/javascript" src="applozic/js/mck-ui-plugins.min.js"></script>			 
         <script type="text/javascript" src="applozic/js/mck-ui-widget.min.js"></script>
         <script type="text/javascript" src="applozic/js/mck-emojis.min.js"></script>	
@@ -308,6 +301,7 @@
                 jQuery = $applozic;
             }
         </script>
+
         <script type="text/javascript">
             //var $applozic = jQuery.noConflict(true);
             //Sample json contains display name and photoLink for userId
@@ -346,12 +340,11 @@
 	                    readConversation: readMessage, // readMessage function defined above
 	                    contactDisplayName: displayName, // displayName function defined above
 	                    contactDisplayImage: contactImageSrc, // contactImageSrc function defined above
-	                    onInit: onInitialize, //callback function execute on plugin initialize
 	                    maxAttachmentSize: 25, //max attachment size in MB
 	                    desktopNotification: true,
 	                    locShare: false,
 	                    googleApiKey: "AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4",
-	                    onInit: function() {  
+	                    onInit: function() {  //callback function execute on plugin initialize
 		                    	$applozic.fn.applozic('loadTab', ''); 
 		                    	registerPushNotifications();
 	                    	}

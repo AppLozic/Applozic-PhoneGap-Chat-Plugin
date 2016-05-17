@@ -739,6 +739,7 @@
     border: 1px solid #E7F1F5;
     border-radius: 4px;
     box-shadow: none !important;
+    -webkit-user-select: text;
 }.mck-text-box-panel {
     width: 25px !important;
 }.mck-text-box-panel .mck-blk-12 {
@@ -805,6 +806,7 @@
     height: 20px;
     background: green;
     border-radius: 4px;
+    width: 0%;
 }.mck-text-req {
     border: 1px solid #EB5858 !important;
 }.mck-msg-box {
@@ -820,6 +822,11 @@
     width:18px;
     height: 18px;
     vertical-align: middle;
+}.mck-cont-msg-wrapper p {
+    margin: 0px !important;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }.mck-file-text .mck-file-name img:hover {
     opacity: 1 !important;
     background-color: transparent !important; 
@@ -952,8 +959,6 @@
     width: 100%;
     font-size: 30px;
     font-weight: bold;
-}.mck-alpha-contact-image .mck-contact-icon {
-    top: 14px;
 }.alpha_D .mck-contact-icon {
     top: 16px;
     left: 1px;
