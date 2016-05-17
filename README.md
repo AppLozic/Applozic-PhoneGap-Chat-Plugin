@@ -190,15 +190,7 @@ Step 2: Add the following under ```<head>``` tag:
                                                     <button type="submit" id="mck-msg-sbmt" class="mck-btn mck-btn-text-panel" title="Send Message"><span class="mck-icon-send"></span></button>
                                                 </div>
                                             </div>
-                                            <div id="mck-file-box" class="mck-file-box row-fluid n-vis">
-                                                <div class="mck-file-expr">
-                                                    <span class="mck-file-content blk-lg-8"><span class="mck-file-lb"></span>&nbsp;<span class="mck-file-sz"></span></span>
-                                                    <span class="progress progress-striped active blk-lg-3" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="progress-bar progress-bar-success bar"></span></span>
-                                                    <span class="move-right">
-                                                        <button type="button" class="mck-box-close mck-remove-file" data-dismiss="div" aria-hidden="true">x</button>
-                                                    </span>
-                                                </div>
-                                            </div>
+                                            <div id="mck-file-box" class="n-vis"></div>
                                         </div>
                                     </div>
                                 </form>
