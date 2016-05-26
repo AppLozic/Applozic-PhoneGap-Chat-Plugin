@@ -3251,7 +3251,7 @@ $applozic.fn.mckModal = $appModal;
                             mckMessageLayout.incrementUnreadCount(ucTabId);
                         }
                         mckNotificationService.notifyUser(message);
-                        var contactHtmlExpr = (message.groupId) ? 'group-' + contact.contactId : 'user-' + contact.contactId;
+                        var contactHtmlExpr = (message.groupId) ? 'group-' + contact.htmlId : 'user-' + contact.htmlId;
                         $applozic("#li-" + contactHtmlExpr + " .mck-unread-count-text").html(mckMessageLayout.getUnreadCount(ucTabId));
                         if (mckMessageLayout.getUnreadCount(ucTabId) > 0) {
                             $applozic("#li-" + contactHtmlExpr + " .mck-unread-count-box").removeClass("n-vis").addClass("vis");
