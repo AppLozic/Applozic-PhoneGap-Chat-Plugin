@@ -326,6 +326,106 @@ Step 6: Push notification registration
 		});
 ```
 
+ 
+##### Step 7: Events subscription
+
+Using events callback, you can subscribe to the following events.
+
+```
+var apzEvents =  {onConnect: function () {
+                        console.log('connected successfully');
+                  }, onConnectFailed: function () {
+                       console.log('connection failed');
+                  }, onMessageDelivered: function (obj) {
+                       console.log('onMessageDelivered: ' + obj);
+                  }, onMessageRead: function (obj) {
+                       console.log('onMessageRead: '  + obj);
+                  }, onMessageReceived: function (obj) {
+                       console.log('onMessageReceived: ' + obj);
+                  }, onMessageSentUpdate: function (obj) {
+                       console.log('onMessageSentUpdate: ' + obj);
+                  }, onUserConnect: function (obj) {
+                       console.log('onUserConnect: ' + obj);
+                  }, onUserDisconnect: function (obj) {
+                       console.log('onUserDisconnect: ' + obj);
+                  }, onUserBlocked: function (obj) {
+                       console.log('onUserBlocked: ' + obj);
+                  }, onUserUnblocked': function (obj) {
+                       console.log('onUserUnblocked: ' + obj);
+                  }, onUserActivated: function () {
+                       console.log('user activated by admin');
+                  }, onUserDeactivated: function () {
+                       console.log('user deactivated by admin');
+                  }
+                };
+```
+
+#### Events description:
+
+1) onConnect: Triggered when user subscribed successfully. 
+
+
+2) onConnectFailed: Triggered when user failed to subscribe. 
+
+
+3) onMessageDelivered: Triggered when message is delivered. 
+
+{'messageKey': 'delivered-message-key'} 
+
+
+4) onMessageRead: Triggered when delivered message is read on other end. 
+
+Response object - 
+
+{'messageKey': 'delivered-message-key'}
+
+
+5) onMessageReceived: Triggered when new message received. 
+
+Response object - {'message': message} 
+
+
+6) onMessageSentUpdate: Triggered when message sent successfully to server. 
+
+Response object- {'messageKey’: 'sent-message-key'} 
+
+
+7) onUserConnect: Triggered when some other user comes online.
+
+Response object - {'userID': 'connected-user-Id'} 
+
+
+8) onUserDisconnect: Triggered when some other user goes offline. 
+
+Response object - {'userId': 'disconnected-user-id', 'lastSeenAtTime' : 'time in millsec'}
+
+
+9) onUserBlocked : Triggered when user is blocked or current user blocked other user from different source 
+
+Response object - {'status': 'BLOCKED_TO or BLOCKED_BY', 'userId': userId}
+
+
+10) onUserUnblocked : Triggered when user is unblocked or current user unblocked other user from different source 
+
+Response object - {'status': 'UNBLOCKED_TO or UNBLOCKED_BY', 'userId': userId}
+
+
+11) onUserActivated : Triggered when user is activated by app admin 
+
+
+12) onUserDeactivated : Triggered when user is deactivated by app admin
+
+
+
+#### Javascript to subscribe to events
+
+```
+ $applozic.fn.applozic('subscribeToEvents', apzEvents);  // object containing event definations 
+ ``` 
+
+ 
+ 
+
 More function details are available here: https://www.applozic.com/docs/web-chat-plugin.html
 
 ##Demo page
