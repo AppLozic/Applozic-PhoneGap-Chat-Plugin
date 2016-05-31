@@ -5,9 +5,9 @@ Applozic powers real time messaging across any device, any platform & anywhere i
 
 Signup at [Applozic](https://www.applozic.com/) to get your application key.    
 
-Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
+##### Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
 
-Step 2: Add the following under ```<head>``` tag:
+##### Step 2: Add the following under ```<head>``` tag:
 
 ```
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'"> 
@@ -26,7 +26,7 @@ Step 2: Add the following under ```<head>``` tag:
     <script src="applozic/js/jquery-2.2.2.min.js"></script>
   ```
   
-  Step 3: Chat UI HTML
+##### Step 3: Chat UI HTML
   Copy the following HTML under <body> tag for Chat UI.
   
   ```
@@ -88,24 +88,24 @@ Step 2: Add the following under ```<head>``` tag:
                         <div id="mck-tab-option-panel" class="mck-tab-panel mck-top-btn-panel">
                             <div id="mck-tab-menu-box" class="mck-tab-menu-box vis">
                                 <div class="mck-row">
-                                    <div class="blk-lg-10">
-                                        <button type="button" id="mck-show-more" class="mck-show-more mck-tab-message-option mck-btn-light mck-btn mck-btn-default" title="Show More">
-                                            <span>Show More</span>
-                                        </button>
-                                    </div>
-                                    <div class="blk-lg-2">
+                                    <div class="blk-lg-2 move-right">
                                         <div class="mck-dropdown-toggle" data-toggle="mckdropdown" aria-expanded="true">
                                             <img src="applozic/css/app/images/mck-icon-menu.png" alt="Tab Menu">
                                         </div>
                                         <ul id="mck-tab-menu-list" class="mck-dropdown-menu mck-tab-menu-box menu-right" role="menu">
                                             <li class="mck-tab-message-option">  
-                                                <a href="#" id="mck-delete-button" class="mck-delete-button menu-item" title="Delete All">
-                                                    Delete All
+                                                <a href="#" id="mck-delete-button" class="mck-delete-button menu-item" title="Clear Messages">
+                                                    Clear Messages
                                                 </a>
                                             </li>
                                             <li id="li-mck-block-user"> 
                                                 <a href="#" id="mck-block-button" class="menu-item" title="Block User">
                                                     Block User
+                                                </a>
+                                            </li>
+                                            <li id="li-mck-leave-group"> 
+                                                <a href="#" id="mck-leave-group-btn" class="menu-item" title="Exit Group">
+                                                    Exit Group
                                                 </a>
                                             </li>
                                         </ul>
@@ -135,14 +135,12 @@ Step 2: Add the following under ```<head>``` tag:
                         <div id="mck-file-menu" class="mck-file-menu">
                             <div class="mck-row">
                                 <div class="blk-lg-6 mck-left mck-pt10">
-                                    <label id="mck-file-up" class="fileinput-button mck-file-upload" title="Files &amp; Photos">
-                                        <a href="#">
-                                            <div class="mck-menu-icon">
-                                                <span class="mck-icon-photo"></span>
-                                            </div>
-                                            <p class="mck-truncate" title="File &amp; Photos">Files &amp; Photos</p></a>
-                                        <input class="mck-file-input" type="file" name="files[]">
-                                    </label>
+                                    <a id="mck-file-up" class="mck-btn-text-panel mck-file-upload" href="#">
+                                        <div class="mck-menu-icon">
+                                            <span class="mck-icon-photo"></span>
+                                        </div>
+                                        <p class="mck-truncate" title="File &amp; Photos">Files &amp; Photos</p>
+                                    </a>
                                 </div>
                                 <div class="blk-lg-6 mck-pt10">
                                     <a id="mck-btn-loc" href="#" class="mck-btn-loc">
@@ -178,10 +176,9 @@ Step 2: Add the following under ```<head>``` tag:
                                                     <button type="button" id="mck-btn-attach" class="mck-btn mck-btn-text-panel mck-btn-attach" aria-expanded="true" title="Attach File"><span class="mck-icon-upload"></span></button>
                                                 </div>
                                                 <div id="mck-attachfile-box" class="mck-blk-12 n-vis">
-                                                    <label id="mck-file-up2" class="fileinput-button mck-file-upload move-right" title="Attach File">
-                                                        <button type="button" class="mck-btn mck-btn-text-panel" title="Attach File"><span class="mck-icon-upload"></span></button>
-                                                        <input class="mck-file-input" type="file" name="files[]">
-                                                    </label>
+                                                    <button id="mck-file-up2" type="button" class="mck-file-upload mck-btn mck-btn-text-panel" title="Attach File">
+                                                        <span class="mck-icon-upload"></span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div id="mck-text-box" contenteditable="true" class="mck-blk-8 mck-text-box mck-text required"></div>
@@ -190,6 +187,7 @@ Step 2: Add the following under ```<head>``` tag:
                                                     <button type="submit" id="mck-msg-sbmt" class="mck-btn mck-btn-text-panel" title="Send Message"><span class="mck-icon-send"></span></button>
                                                 </div>
                                             </div>
+                                            <input id="mck-file-input" class="mck-file-input n-vis" type="file" name="files[]">
                                             <div id="mck-file-box" class="n-vis"></div>
                                         </div>
                                     </div>
@@ -202,7 +200,7 @@ Step 2: Add the following under ```<head>``` tag:
                             </div>
                         </div>
                         <div class="mck-running-on n-vis">
-                            <a href="https://www.applozic.com" target="_blank"><strong>Powered by Applozic</strong></a>
+                            <a href="https://www.applozic.com" target="_blank"><span class="n-vis">Applozic Chat SDK</span><strong>Powered by Applozic</strong></a>
                         </div>
                     </div>
                     <div id="mck-sidebox-search" class="mck-sidebox-search mck-sidebox-content mck-box-content n-vis">
@@ -262,7 +260,7 @@ Step 2: Add the following under ```<head>``` tag:
         </div>
   ```
   
-  Step 4: Javascript
+##### Step 4: Javascript
   
 ```  
         <script type="text/javascript" src="applozic/js/mck-ui-plugins.min.js"></script>			 
@@ -282,7 +280,7 @@ Step 2: Add the following under ```<head>``` tag:
         </script>
 ```
 
-Step 5: Open Chat Interface
+##### Step 5: Open Chat Interface
 
 ```
 //Function to initialize chat plugin
@@ -304,7 +302,7 @@ Step 5: Open Chat Interface
 
 ```
 
-Step 6: Push notification registration
+##### Step 6: Push notification registration
 
 ```
     var userPxy = {
