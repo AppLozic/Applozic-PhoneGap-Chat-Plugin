@@ -3518,9 +3518,10 @@ var $applozic = jQuery.noConflict(true);
                     }
                 }
                 if (typeof message.fileMeta === 'object') {
-                    message.fileMeta.url = MCK_FILE_URL + '/rest/ws/aws/file/' + message.fileMeta.blobKey;
-                    delete message.fileMeta.blobKey;
-                    messageFeed.file = message.fileMeta;
+                    var file = message.fileMeta;
+                    file.url = MCK_FILE_URL + '/rest/ws/aws/file/' + message.fileMeta.blobKey;
+                    delete file.blobKey;
+                    messageFeed.file = file;
                 }
                 return messageFeed;
             };
