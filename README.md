@@ -5,6 +5,8 @@ Applozic powers real time messaging across any device, any platform & anywhere i
 
 Signup at [Applozic](https://www.applozic.com/) to get your application key.    
 
+Documentation: https://www.applozic.com/docs/phonegap-chat-plugin.html
+
 ##### Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
 
 ##### Step 2: Add the following under ```<head>``` tag:
