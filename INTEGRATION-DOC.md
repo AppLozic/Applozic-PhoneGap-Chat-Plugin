@@ -301,8 +301,9 @@
     var userPxy = {
 		    'applicationId': 'APPLICATION_KEY', // Replace APPLICATION_KEY with the Application key received after Signup from https://www.applozic.com/signup.html
 		    'userId': 'USER_ID', // Replace USER_ID with the user's unique identifier
-				'registrationId': 'GCM_REGISTRATION_ID', //Replace GCM_REGISTRATION_ID with GCM registration id
-			  'pushNotificationFormat' : '1'
+		    'registrationId': 'GCM_REGISTRATION_ID', //Replace GCM_REGISTRATION_ID with GCM registration id
+		    'pushNotificationFormat' : '1',
+		    'appVersionCode': '106' 
 		  };
 		
 		$.ajax({
