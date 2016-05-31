@@ -225,7 +225,7 @@
                 <div class="mck-box-dialog mck-box-md">
                     <div class="mck-box-content">
                         <div class="mck-box-top">
-                            <button type="button" class="mck-box-close" data-dismiss="mckbox" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            <button type="button" class="mck-box-close" data-dismiss="mckbox" aria-label="Close"><span aria-hidden="true">x</span></button>
                             <h4 class="mck-box-title">Location Sharing</h4>
                         </div>
                         <div class="mck-box-body">
