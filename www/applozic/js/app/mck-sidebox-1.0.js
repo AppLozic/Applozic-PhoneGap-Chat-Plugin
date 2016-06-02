@@ -148,6 +148,13 @@ var $applozic = jQuery.noConflict(true);
                     } else if (typeof $.fn.mckModal === 'function') {
                         $applozic.fn.mckModal = $.fn.mckModal.noConflict();
                     }
+                    if (typeof $.fn.linkify === 'function') {
+                        $applozic.fn.linkify = $.fn.linkify;
+                        jQuery.fn.linkify = $.fn.linkify;
+                    } else if (typeof $applozic.fn.linkify === 'function') {
+                        $.fn.linkify = $applozic.fn.linkify;
+                        jQuery.fn.linkify = $applozic.fn.linkify;
+                    }
                     var applozic = new Applozic(appOptions);
                     applozic.init();
                     $mck_sidebox.data("applozic_instance", applozic);
@@ -3518,7 +3525,7 @@ var $applozic = jQuery.noConflict(true);
                     }
                 }
                 if (typeof message.fileMeta === 'object') {
-                    var file = message.fileMeta;
+                    var file = $applozic.extend({}, message.fileMeta);
                     file.url = MCK_FILE_URL + '/rest/ws/aws/file/' + message.fileMeta.blobKey;
                     delete file.blobKey;
                     messageFeed.file = file;
