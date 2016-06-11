@@ -157,4 +157,4 @@ Response object - {’userId’: ‘disconnected-user-id’, ‘lastSeenAtTime�
 
 
 More details here: 
-https://www.applozic.com/developers.html#applozic-web-plugin-getting-started
+https://www.applozic.com/docs/web-chat-plugin.html#overview
