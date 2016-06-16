@@ -374,7 +374,6 @@
     border: 0;
     display: table;
     width: 100%;
-    height: 100%;
     border-spacing: 0;
     outline: 0;
     table-layout: fixed;
@@ -385,6 +384,8 @@
     background-color: #fff;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+}.mck-sidebox .mck-box-content {
+    height: 100%;
 }.mck-box-top {
     padding: 0 10px;
     min-height: 49px;
@@ -399,7 +400,7 @@
     margin: 0px;
 } .mck-box-top .blk-lg-2 {
     width:20px;
-}.mck-group-search-box .mck-box-top .blk-lg-3 {
+}.mck-group-search-box .mck-box-top .blk-lg-3{
     width: 30px;
     height: inherit;
     padding: 14px 0;
@@ -1576,6 +1577,7 @@
 }.mck-group-add-member-box img, .mck-group-search-box .mck-box-top .blk-lg-3 img {
     width: 20px;
     height: 20px;
+    display: block;
     vertical-align: middle;
 }.mck-group-add-member .blk-lg-3 {
     width: 40px;
