@@ -5387,18 +5387,16 @@ var $applozic = jQuery.noConflict(true);
             var $mck_typing_box_text = $applozic(".mck-typing-box .name-text");
             var $mck_message_inner = $applozic("#mck-message-cell .mck-message-inner");
             _this.init = function () {
-                if (MCK_CONNECTED_CLIENT_COUNT < 10) {
-                    var port = (!mckUtils.startsWith(MCK_WEBSOCKET_URL, "https")) ? "15674" : "15675";
-                    if (typeof w.SockJS === 'function') {
-                        var socket = new SockJS(MCK_WEBSOCKET_URL + ":" + port + "/stomp");
-                        stompClient = w.Stomp.over(socket);
-                        stompClient.heartbeat.outgoing = 0;
-                        stompClient.heartbeat.incoming = 0;
-                        stompClient.connect("guest", "guest", _this.onConnect, _this.onError, '/');
-                        w.addEventListener("beforeunload", function (e) {
-                            _this.sendStatus(0);
-                        });
-                    }
+                var port = (!mckUtils.startsWith(MCK_WEBSOCKET_URL, "https")) ? "15674" : "15675";
+                if (typeof w.SockJS === 'function') {
+                    var socket = new SockJS(MCK_WEBSOCKET_URL + ":" + port + "/stomp");
+                    stompClient = w.Stomp.over(socket);
+                    stompClient.heartbeat.outgoing = 0;
+                    stompClient.heartbeat.incoming = 0;
+                    stompClient.connect("guest", "guest", _this.onConnect, _this.onError, '/');
+                    w.addEventListener("beforeunload", function (e) {
+                        _this.sendStatus(0);
+                    });
                 }
             };
             _this.checkConnected = function () {
