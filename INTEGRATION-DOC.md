@@ -19,7 +19,7 @@
     <script src="applozic/js/jquery-2.2.2.min.js"></script>
   ```
   
- #### Step 3: Chat UI HTML
+#### Step 3: Chat UI HTML
   Copy the following HTML under <body> tag for Chat UI.
   
   ```
