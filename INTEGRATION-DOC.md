@@ -1,6 +1,6 @@
-##### Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
+#### Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
 
-##### Step 2: Add the following under ```<head>``` tag:
+#### Step 2: Add the following under ```<head>``` tag:
 
 ```
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'"> 
@@ -19,7 +19,7 @@
     <script src="applozic/js/jquery-2.2.2.min.js"></script>
   ```
   
- ##### Step 3: Chat UI HTML
+ #### Step 3: Chat UI HTML
   Copy the following HTML under <body> tag for Chat UI.
   
   ```
@@ -341,7 +341,7 @@
         </div>
   ```
   
-##### Step 4: Javascript
+#### Step 4: Javascript
   
 ```  
         <script type="text/javascript" src="applozic/js/mck-ui-plugins.min.js"></script>			 
@@ -361,7 +361,7 @@
         </script>
 ```
 
-##### Step 5: Open Chat Interface
+#### Step 5: Open Chat Interface
 
 ```
 //Function to initialize chat plugin
@@ -383,7 +383,7 @@
 
 ```
 
-##### Step 6: Push notification registration
+#### Step 6: Push notification registration
 
 ```
     var userPxy = {
@@ -406,7 +406,7 @@
 		});
 ```
  
-##### Step 7: Events subscription
+#### Step 7: Events subscription
 
 Using events callback, you can subscribe to the following events.
 
