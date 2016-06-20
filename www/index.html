@@ -36,7 +36,7 @@
             <form id="chat-form" class="ph35">
                 <div class="form-group">
                     <label for="userId">Enter your UserId</label><br>
-                    <input type="text" class="form-control" id="userId" name="userId" value = "demo" required>
+                    <input type="text" class="form-control" id="userId" name="userId" value = "phonegapdemo" required>
                 </div>
                 <br><br>
                 <div class="form-group mb-30">
@@ -416,7 +416,7 @@
             $(document).ready(function () {
                 $("#chat-form").on('submit', function () {
                     //Function to initialize chat plugin
-                    $applozic.fn.applozic({userId: $("#userId").val(), userName: 'Demo User', appId: 'applozic-sample-app',
+                    $applozic.fn.applozic({baseUrl:'https://apps.applozic.com',userId: $("#userId").val(), userName: 'Demo User', appId: 'applozic-sample-app',
                         ojq: $original,
                         obsm: oModal,
                         readConversation: readMessage, // readMessage function defined above
