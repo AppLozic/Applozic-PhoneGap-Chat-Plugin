@@ -346,6 +346,7 @@ Documentation: https://www.applozic.com/docs/phonegap-chat-plugin.html
                 </div>
             </div>
         </div>
+ ```
   
 ##### Step 4: Javascript
   
