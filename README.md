@@ -31,7 +31,8 @@ Documentation: https://www.applozic.com/docs/phonegap-chat-plugin.html
 ##### Step 3: Chat UI HTML
   Copy the following HTML under <body> tag for Chat UI.
   
-  ```   <div id="mck-side-panel">
+  ```   
+  <div id="mck-side-panel">
            <div id="mck-sidebox" class="mck-sidebox mck-box fade">
             <div class="mck-box-dialog mck-box-sm mck-right mck-bg-white">
                 <div id="mck-sidebox-content" class="mck-sidebox-content mck-box-content">
