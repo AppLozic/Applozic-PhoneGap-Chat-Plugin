@@ -1,6 +1,8 @@
-#### Step 1: Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
+#### Step 1: Download plugin
+Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
 
-#### Step 2: Add the following under ```<head>``` tag:
+#### Step 2: Add plugin
+Add the following under ```<head>``` tag:
 
 ```
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'"> 
@@ -341,7 +343,7 @@
         </div>
   ```
   
-#### Step 4: Javascript
+#### Step 4: Scripts
   
 ```  
         <script type="text/javascript" src="applozic/js/mck-ui-plugins.min.js"></script>			 
@@ -361,7 +363,7 @@
         </script>
 ```
 
-#### Step 5: Open Chat Interface
+#### Step 5: Login/Register User
 
 ```
 //Function to initialize chat plugin
@@ -383,7 +385,7 @@
 
 ```
 
-#### Step 6: Push notification registration
+#### Step 6: Push notification setup
 
 ```
     var userPxy = {
@@ -411,93 +413,42 @@
 Using events callback, you can subscribe to the following events.
 
 ```
-var apzEvents =  {onConnect: function () {
-                        console.log('connected successfully');
-                  }, onConnectFailed: function () {
-                       console.log('connection failed');
-                  }, onMessageDelivered: function (obj) {
-                       console.log('onMessageDelivered: ' + obj);
-                  }, onMessageRead: function (obj) {
-                       console.log('onMessageRead: '  + obj);
-                  }, onMessageReceived: function (obj) {
-                       console.log('onMessageReceived: ' + obj);
-                  }, onMessageSentUpdate: function (obj) {
-                       console.log('onMessageSentUpdate: ' + obj);
-                  }, onUserConnect: function (obj) {
-                       console.log('onUserConnect: ' + obj);
-                  }, onUserDisconnect: function (obj) {
-                       console.log('onUserDisconnect: ' + obj);
-                  }, onUserBlocked: function (obj) {
-                       console.log('onUserBlocked: ' + obj);
-                  }, onUserUnblocked': function (obj) {
-                       console.log('onUserUnblocked: ' + obj);
-                  }, onUserActivated: function () {
-                       console.log('user activated by admin');
-                  }, onUserDeactivated: function () {
-                       console.log('user deactivated by admin');
-                  }
-                };
+$applozic.fn.applozic('subscribeToEvents', 	{
+                 onConnect: function () {
+                       //User subscribed successfully
+                 },
+                 onConnectFailed: function () {
+                       //connection failed
+                 },
+                 onMessageDelivered: function (obj) {
+                       //message delivered obj json: {'messageKey': 'delivered-message-key'}
+                 },
+                 onMessageRead: function (obj) {
+                       //message read obj json: {'messageKey': 'read-message-key'}
+                 },
+                 onMessageReceived: function (obj) {
+                       //message received
+                 },
+                 onMessageSentUpdate: function (obj) {
+                       //message sent confirmation: {'messageKey': 'sent-message-key'}
+                 },
+                 onUserConnect: function (obj) {
+                       //user from the contact list came online: {'userID': 'connected-user-Id'}
+                 },
+                 onUserDisconnect: function (obj) {
+                       //user from the contact list went offline: {'userID': 'connected-user-Id'}
+                 },
+                 onUserBlocked: function (obj) {
+                       //user blocks someone or gets blocked by someone: {'status': 'BLOCKED_TO or BLOCKED_BY', 'userId': userId}
+                 },
+                 onUserUnblocked': function (obj) {
+                       //user unblocks someone or get unblocked by someone: {'status': 'BLOCKED_TO or BLOCKED_BY', 'userId': userId}
+                 },
+                 onUserActivated: function () {
+                       //user is activated by app admin
+                 },
+                 onUserDeactivated: function () {
+                       //user is deactivated by app admin
+                 }
+               });
 ```
-
-#### Events description:
-
-1) onConnect: Triggered when user subscribed successfully. 
-
-
-2) onConnectFailed: Triggered when user failed to subscribe. 
-
-
-3) onMessageDelivered: Triggered when message is delivered. 
-
-{'messageKey': 'delivered-message-key'} 
-
-
-4) onMessageRead: Triggered when delivered message is read on other end. 
-
-Response object - 
-
-{'messageKey': 'delivered-message-key'}
-
-
-5) onMessageReceived: Triggered when new message received. 
-
-Response object - {'message': message} 
-
-
-6) onMessageSentUpdate: Triggered when message sent successfully to server. 
-
-Response object- {'messageKey': 'sent-message-key'} 
-
-
-7) onUserConnect: Triggered when some other user comes online.
-
-Response object - {'userID': 'connected-user-Id'} 
-
-
-8) onUserDisconnect: Triggered when some other user goes offline. 
-
-Response object - {'userId': 'disconnected-user-id', 'lastSeenAtTime' : 'time in millsec'}
-
-
-9) onUserBlocked : Triggered when user is blocked or current user blocked other user from different source 
-
-Response object - {'status': 'BLOCKED_TO or BLOCKED_BY', 'userId': userId}
-
-
-10) onUserUnblocked : Triggered when user is unblocked or current user unblocked other user from different source 
-
-Response object - {'status': 'UNBLOCKED_TO or UNBLOCKED_BY', 'userId': userId}
-
-
-11) onUserActivated : Triggered when user is activated by app admin 
-
-
-12) onUserDeactivated : Triggered when user is deactivated by app admin
-
-
-
-#### Javascript to subscribe to events
-
-```
- $applozic.fn.applozic('subscribeToEvents', apzEvents);  // object containing event definations 
- ``` 
