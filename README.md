@@ -441,7 +441,7 @@ var apzEvents =  {onConnect: function () {
                        console.log('onUserDisconnect: ' + obj);
                   }, onUserBlocked: function (obj) {
                        console.log('onUserBlocked: ' + obj);
-                  }, onUserUnblocked': function (obj) {
+                  }, onUserUnblocked: function (obj) {
                        console.log('onUserUnblocked: ' + obj);
                   }, onUserActivated: function () {
                        console.log('user activated by admin');
