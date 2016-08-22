@@ -4,8 +4,6 @@
     <description>Hello World sample application that responds to the deviceready event.</description>
     <author email="support@phonegap.com" href="http://phonegap.com">PhoneGap Team</author>
     <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
     <icon src="icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -14,4 +12,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
 </widget>
