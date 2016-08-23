@@ -361,6 +361,7 @@ Add the following under ```<head>``` tag:
         <script type="text/javascript" src="applozic/js/mck-socket.min.js"></script>
         <script type="text/javascript" src="applozic/js/locationpicker.jquery.min.js"></script>
         <script type="text/javascript" src="applozic/js/app/mck-sidebox-1.0.js"></script>
+        <script type="text/javascript" src="applozic/js/app/mck-common-1.0.js"></script>
         <script type="text/javascript">
             if (typeof $original !== 'undefined') {
                 $ = $original;
