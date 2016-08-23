@@ -3214,11 +3214,9 @@ var MCK_CLIENT_GROUP_MAP = [];
                 $mck_text_box.html("");
                 $mck_msg_sbmt.attr('disabled', false);
                 $mck_file_box.removeClass('vis').removeClass('mck-text-req').addClass('n-vis').attr("required", "").html("");
-                console.log(keyboard);
                 if (keyboard) {
                   $mck_text_box.focus().select();
                 } else {
-                  console.log("blurring");
                   $mck_text_box.blur();
                 }
             };
