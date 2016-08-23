@@ -1,3 +1,4 @@
+var $applozic = jQuery.noConflict(true);
 var w = window, d = document;
 var MCK_BASE_URL;
 var MCK_CURR_LATITIUDE = 40.7324319;
@@ -285,7 +286,7 @@ function MckNotificationUtils() {
         if (MCK_SW_SUBSCRIPTION) {
             var subscriptionId = MCK_SW_SUBSCRIPTION.endpoint.split("/").slice(-1)[0];
             if (subscriptionId) {
-                $.ajax({
+                $applozic.ajax({
                         url: MCK_BASE_URL + MCK_SW_REGISTER_URL, type: 'post', data: 'registrationId=' + subscriptionId, success: function(data) {}, error: function() {}
                 });
             }
@@ -320,7 +321,7 @@ function MckGroupService() {
     var GROUP_REMOVE_MEMBER_URL = "/rest/ws/group/remove/member";
     _this.loadGroups = function(params) {
         var response = new Object();
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_LIST_URL, type: 'get', global: false, success: function(data) {
                     if (data.status === "success") {
                         response.status = "success";
@@ -366,7 +367,7 @@ function MckGroupService() {
         if (params.conversationId) {
             data += "&conversationId=" + params.conversationId;
         }
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_FEED_URL, data: data, type: 'get', global: false, success: function(data) {
                     if (data.status === "success") {
                         var groupFeed = data.response;
@@ -419,7 +420,7 @@ function MckGroupService() {
             }
             return;
         }
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_LEAVE_URL, data: data, type: 'get', global: false, success: function(data) {
                     if (data.status === "success") {
                         if (params.clientGroupId) {
@@ -473,7 +474,7 @@ function MckGroupService() {
             return;
         }
         data += "&userId=" + encodeURIComponent(params.userId);
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_REMOVE_MEMBER_URL, data: data, type: 'get', global: false, success: function(data) {
                     if (data.status === "success") {
                         if (params.clientGroupId) {
@@ -523,7 +524,7 @@ function MckGroupService() {
             return;
         }
         data += "&userId=" + encodeURIComponent(params.userId);
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_ADD_MEMBER_URL, data: data, type: 'get', global: false, success: function(data) {
                     if (data.status === "success") {
                         if (params.clientGroupId) {
@@ -579,7 +580,7 @@ function MckGroupService() {
         if (params.imageUrl) {
             groupInfo.imageUrl = params.imageUrl;
         }
-        $.ajax({
+        $applozic.ajax({
                 url: MCK_BASE_URL + GROUP_UPDATE_INFO_URL, type: 'post', data: JSON.stringify(groupInfo), contentType: 'application/json', global: false, success: function(data) {
                     if (data.status === "success") {
                         if (params.clientGroupId) {

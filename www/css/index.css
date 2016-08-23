@@ -49,6 +49,7 @@ h1 {
     text-align:center;
 }
 
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
@@ -95,6 +96,8 @@ btn {
     border: 1px solid #0fb7c0;
 }
 
+
+/*
 .form-control {
     display: block;
     width: 100%;
@@ -112,7 +115,7 @@ btn {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
+}*/
 
 .pd-12 {
     padding: 12px;
@@ -120,6 +123,7 @@ btn {
 .w-full {
     width: 100%;
 }
+
 
 label {
     display: inline-block;
