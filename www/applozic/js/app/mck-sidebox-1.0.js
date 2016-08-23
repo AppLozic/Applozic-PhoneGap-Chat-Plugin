@@ -1498,7 +1498,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                 $mck_msg_sbmt.attr('disabled', false);
                 $applozic("." + randomId + " .mck-message-status").removeClass('mck-icon-sent').addClass('mck-icon-time');
                 mckMessageLayout.addTooltip(randomId);
-                mckMessageLayout.clearMessageField();
+                mckMessageLayout.clearMessageField(true);
                 FILE_META = [];
                 delete TAB_MESSAGE_DRAFT[contact.contactId];
             };
@@ -2378,7 +2378,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                         delete TAB_MESSAGE_DRAFT[currTabId];
                     }
                 }
-                _this.clearMessageField();
+                _this.clearMessageField(false);
                 _this.addDraftMessage(params.tabId);
                 $mck_msg_error.html("");
                 $mck_msg_error.removeClass('vis').addClass('n-vis');
@@ -3210,11 +3210,15 @@ var MCK_CLIENT_GROUP_MAP = [];
                 }
                 return "";
             };
-            _this.clearMessageField = function() {
+            _this.clearMessageField = function(keyboard) {
                 $mck_text_box.html("");
                 $mck_msg_sbmt.attr('disabled', false);
                 $mck_file_box.removeClass('vis').removeClass('mck-text-req').addClass('n-vis').attr("required", "").html("");
-                $mck_text_box.focus().select();
+                if (keyboard) {
+                  $mck_text_box.focus().select();
+                } else {
+                  $mck_text_box.blur();
+                }
             };
             _this.addDraftMessage = function(tabId) {
                 FILE_META = [];
