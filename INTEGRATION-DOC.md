@@ -26,7 +26,7 @@ Add the following under ```<head>``` tag:
   
   ```
    <div id="mck-side-panel">
-          <div id="mck-sidebox" class="mck-sidebox mck-box fade">
+          <div id="mck-sidebox" class="mck-sidebox mck-box mck-fade">
             <div class="mck-box-dialog mck-box-sm mck-right mck-bg-white">
                 <div id="mck-sidebox-content" class="mck-sidebox-content mck-box-content">
                     <div id="mck-conversation-header" class="mck-conversation-header mck-truncate n-vis"></div>
@@ -277,7 +277,7 @@ Add the following under ```<head>``` tag:
                 </div>
             </div>
         </div>
-        <div id="mck-loc-box" class="mck-box mck-loc-box fade" aria-hidden="false">
+        <div id="mck-loc-box" class="mck-box mck-loc-box mck-fade" aria-hidden="false">
             <div class="mck-box-dialog mck-box-md">
                 <div class="mck-box-content">
                     <div class="mck-box-top mck-row">
@@ -310,7 +310,7 @@ Add the following under ```<head>``` tag:
                 </div>
             </div>
         </div>
-        <div id="mck-goup-search-box" class="mck-box mck-group-search-box fade" aria-hidden="false">
+        <div id="mck-goup-search-box" class="mck-box mck-group-search-box mck-fade" aria-hidden="false">
             <div class="mck-box-dialog mck-box-sm">
                 <div class="mck-box-content">
                     <div class="mck-box-top mck-row">
