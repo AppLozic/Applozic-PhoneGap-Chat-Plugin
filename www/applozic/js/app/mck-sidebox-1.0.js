@@ -971,6 +971,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                         $mck_search_inner.html('<div class="mck-no-data-text mck-text-muted">No contacts yet!</div>');
                         mckMessageLayout.initSearchAutoType();
                     }
+
                     $mck_search.focus();
                 });
                 $mck_text_box.keydown(function(e) {
@@ -2323,6 +2324,7 @@ var MCK_CLIENT_GROUP_MAP = [];
             var $mck_product_up_value = $applozic(".mck-product-rt-up .mck-product-value");
             var $mck_product_down_key = $applozic(".mck-product-rt-down .mck-product-key");
             var $mck_product_down_value = $applozic(".mck-product-rt-down .mck-product-value");
+            var $mck_text_box = $applozic("#mck-text-box");
             var FILE_PREVIEW_URL = "/rest/ws/aws/file/";
             var LINK_EXPRESSION = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
             var LINK_MATCHER = new RegExp(LINK_EXPRESSION);
@@ -3217,6 +3219,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                 if (keyboard) {
                   $mck_text_box.focus().select();
                 } else {
+                  $mck_search.blur();
                   $mck_text_box.blur();
                 }
             };
@@ -3819,6 +3822,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                                             $mck_tab_message_option.removeClass('vis').addClass('n-vis');
                                             $mck_msg_inner.html('<div class="mck-no-data-text mck-text-muted">No messages yet!</div>');
                                         }
+
                                     }
                                 }
                             } else {
