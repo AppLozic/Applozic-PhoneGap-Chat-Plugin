@@ -1100,31 +1100,15 @@ var MCK_CLIENT_GROUP_MAP = [];
                 $applozic(d).on("click", "." + MCK_LAUNCHER + ",.mck-conversation-tab-link, .mck-contact-list ." + MCK_LAUNCHER, function(e) {
                     e.preventDefault();
                     var $this = $applozic(this);
-                    var tabId = $this.data("mck-id");
-                    tabId = (typeof tabId !== "undefined" && tabId !== "") ? tabId.toString() : "";
-                    var userName = $this.data("mck-name");
-                    userName = (typeof userName !== "undefined" && userName !== "") ? userName.toString() : "";
-                    var topicId = $this.data("mck-topicid");
-                    topicId = (typeof topicId !== "undefined" && topicId !== "") ? topicId.toString() : "";
-                    var isGroup = ($this.data("isgroup") === true);
-                    var conversationId = $this.data("mck-conversationid");
-                    conversationId = (typeof conversationId !== "undefined" && conversationId !== "") ? conversationId.toString() : "";
-                    if (topicId && !conversationId) {
-                        var topicStatus = $applozic(this).data("mck-topic-status");
-                        if (topicStatus) {
-                            topicStatus = (CONVERSATION_STATUS_MAP.indexOf(topicStatus) === -1) ? CONVERSATION_STATUS_MAP[0] : topicStatus.toString();
-                        } else {
-                            topicStatus = CONVERSATION_STATUS_MAP[0];
-                        }
-                        mckMessageService.getConversationId({
-                                'tabId': tabId, 'isGroup': isGroup, 'userName': userName, 'topicId': topicId, 'topicStatus': topicStatus, 'isMessage': false
-                        });
+                    var elem = this;
+                    if ($this.parents(".mck-search-list").length) {
+                       $mck_search.bind('blur');
+                       setTimeout(function(){
+                          _this.openChat(elem);
+                        }, 600);
                     } else {
-                        mckMessageLayout.loadTab({
-                                'tabId': tabId, 'isGroup': isGroup, 'userName': userName, 'conversationId': conversationId, 'topicId': topicId
-                        });
+                      _this.openChat(this);
                     }
-                    $mck_search.val("");
                 });
                 $applozic(d).on("click", ".mck-close-sidebox", function(e) {
                     e.preventDefault();
@@ -1431,6 +1415,34 @@ var MCK_CLIENT_GROUP_MAP = [];
                     }
                     $applozic('.mcktypeahead.mck-dropdown-menu').hide();
                 });
+            };
+            _this.openChat = function(ele) {
+              var $this = $applozic(ele);
+              var tabId = $this.data("mck-id");
+              tabId = (typeof tabId !== "undefined" && tabId !== "") ? tabId.toString() : "";
+              var userName = $this.data("mck-name");
+              userName = (typeof userName !== "undefined" && userName !== "") ? userName.toString() : "";
+              var topicId = $this.data("mck-topicid");
+              topicId = (typeof topicId !== "undefined" && topicId !== "") ? topicId.toString() : "";
+              var isGroup = ($this.data("isgroup") === true);
+              var conversationId = $this.data("mck-conversationid");
+              conversationId = (typeof conversationId !== "undefined" && conversationId !== "") ? conversationId.toString() : "";
+              if (topicId && !conversationId) {
+                  var topicStatus = $applozic(this).data("mck-topic-status");
+                  if (topicStatus) {
+                      topicStatus = (CONVERSATION_STATUS_MAP.indexOf(topicStatus) === -1) ? CONVERSATION_STATUS_MAP[0] : topicStatus.toString();
+                  } else {
+                      topicStatus = CONVERSATION_STATUS_MAP[0];
+                  }
+                  mckMessageService.getConversationId({
+                          'tabId': tabId, 'isGroup': isGroup, 'userName': userName, 'topicId': topicId, 'topicStatus': topicStatus, 'isMessage': false
+                  });
+              } else {
+                  mckMessageLayout.loadTab({
+                          'tabId': tabId, 'isGroup': isGroup, 'userName': userName, 'conversationId': conversationId, 'topicId': topicId
+                  });
+              }
+              $mck_search.val("");
             };
             _this.sendMessage = function(messagePxy) {
                 if (typeof messagePxy !== 'object') {
