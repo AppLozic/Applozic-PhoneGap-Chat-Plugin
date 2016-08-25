@@ -972,7 +972,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                         mckMessageLayout.initSearchAutoType();
                     }
 
-                    $mck_search.focus();
+                    //$mck_search.focus();
                 });
                 $mck_text_box.keydown(function(e) {
                     if ($mck_text_box.hasClass('mck-text-req')) {
