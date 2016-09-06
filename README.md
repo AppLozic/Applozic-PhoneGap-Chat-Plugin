@@ -519,7 +519,7 @@ Response object - {'status': 'UNBLOCKED_TO or UNBLOCKED_BY', 'userId': userId}
  
  
 ###Documentation:
-For advanced options and customization, visit [Applozic PhoneGap Chat & Messaging Plugin Documentation](https://www.applozic.com/docs/phonegap-chat-plugin.html?utm_source=github&utm_medium=readme&utm_campaign=android)
+For advanced options and customization, visit [Applozic PhoneGap Chat & Messaging Plugin Documentation](https://www.applozic.com/docs/phonegap-chat-plugin.html?utm_source=github&utm_medium=readme&utm_campaign=phonegap)
 
  
 
