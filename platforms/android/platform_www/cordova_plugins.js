@@ -459,32 +459,17 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-webrtc/dist/webrtc.js",
+        "id": "cordova-plugin-webrtc.WebRTC",
+        "clobbers": [
+            "webrtc"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
-{
-    "cordova-plugin-battery-status": "1.1.2",
-    "cordova-plugin-camera": "2.1.1",
-    "cordova-plugin-console": "1.0.3",
-    "cordova-plugin-contacts": "2.0.1",
-    "cordova-plugin-device": "1.1.2",
-    "cordova-plugin-device-motion": "1.2.1",
-    "cordova-plugin-device-orientation": "1.0.3",
-    "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-file": "4.1.1",
-    "cordova-plugin-file-transfer": "1.5.1",
-    "cordova-plugin-geolocation": "2.1.0",
-    "cordova-plugin-globalization": "1.0.3",
-    "cordova-plugin-inappbrowser": "1.3.0",
-    "cordova-plugin-media": "2.2.0",
-    "cordova-plugin-media-capture": "1.2.0",
-    "cordova-plugin-network-information": "1.2.1",
-    "cordova-plugin-splashscreen": "3.2.2",
-    "cordova-plugin-statusbar": "2.1.3",
-    "cordova-plugin-vibration": "2.1.1",
-    "cordova-plugin-whitelist": "1.2.2",
-    "phonegap-plugin-push": "1.6.3"
-};
+{}
 // BOTTOM OF METADATA
 });

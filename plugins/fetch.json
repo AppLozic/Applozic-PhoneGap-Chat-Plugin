@@ -168,5 +168,21 @@
         "variables": {
             "SENDER_ID": "195932243324"
         }
+    },
+    "cordova-plugin-webrtc": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-webrtc"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-opentok-android-permissions": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-opentok-android-permissions"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

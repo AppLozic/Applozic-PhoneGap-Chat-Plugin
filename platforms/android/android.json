@@ -120,11 +120,11 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-                            "count": 2
+                            "count": 3
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
-                            "count": 1
+                            "count": 2
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
@@ -136,6 +136,26 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"true\" />",
                             "count": 1
                         }
                     ],
@@ -272,6 +292,12 @@
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "195932243324",
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-plugin-webrtc": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "cordova-opentok-android-permissions": {
             "PACKAGE_NAME": "com.applozic.phonegap"
         }
     },
@@ -735,6 +761,13 @@
             "id": "phonegap-plugin-push.PushNotification",
             "clobbers": [
                 "PushNotification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-webrtc/dist/webrtc.js",
+            "id": "cordova-plugin-webrtc.WebRTC",
+            "clobbers": [
+                "webrtc"
             ]
         }
     ],
