@@ -70,12 +70,6 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "195932243324",
             "PACKAGE_NAME": "com.applozic.phonegap"
-        },
-        "cordova-plugin-webrtc": {
-            "PACKAGE_NAME": "com.applozic.phonegap"
-        },
-        "cordova-opentok-android-permissions": {
-            "PACKAGE_NAME": "com.applozic.phonegap"
         }
     },
     "dependent_plugins": {}

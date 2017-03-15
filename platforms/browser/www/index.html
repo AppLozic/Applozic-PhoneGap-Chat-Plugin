@@ -6,7 +6,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdnjs.cloudflare.com https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apps.applozic.com https://maps.google.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://apps.applozic.com 'unsafe-inline'">
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
@@ -14,21 +14,6 @@
         <link href="applozic/css/mck-combined.min.css" rel="stylesheet">
         <link href="applozic/css/app/mck-sidebox-1.0.css" rel="stylesheet">
         <link href="applozic/css/app/mck-mobile-fullview.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="applozic/css/app/videocall.css">
-
-        <style>
-          /*.mck-message-inner.group-category-drop .group-user-count {
-            display: inline;
-          }*/
-
-          .mck-message-inner .mck-group-count-box {
-        		display: none;
-        	}
-        	.mck-message-inner .mck-groupcategory-drop .mck-group-count-box {
-        		display: block;
-        	}
-        </style>
 
   <!--      <link href="applozic/css/app/mck-sidebox-full-1.0.css" rel="stylesheet"> -->
         <!-- Custom JS -->
@@ -41,7 +26,6 @@
             }
         </script>
         <script src="applozic/js/jquery-2.2.2.min.js"></script>
-
         <!-- Applozic Chat -->
 
         <title>Applozic PhoneGap Chat Demo</title>
@@ -55,26 +39,15 @@
             <form id="chat-form" class="ph35">
                 <div class="form-group">
                     <label for="userId">Enter your UserId</label><br>
-                    <input type="text" class="form-control" id="userId" name="userId" value = "beneton" required>
+                    <input type="text" class="form-control" id="userId" name="userId" value = "phonegapdemo" required>
                 </div>
                 <br><br>
                 <div class="form-group mb-30">
                     <button id="chat-submit" type="submit" class="btn btn-green pd-12 w-full">Launch Plugin</button>
                 </div>
             </form>
-
-
-            <button onclick="applozicCameraService.capturePhotoWithData();">Capture Photo With Image Data</button> <br>
-            <button onclick="applozicCameraService.capturePhotoWithFile();">Capture Photo With Image File URI</button> <br>
-            <button onclick="applozicCameraService.getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-            <button onclick="applozicCameraService.getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-            <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-            <img style="display:none;" id="largeImage" src="" />
         </div>
-
-
         <script type="text/javascript" src="cordova.js"></script>
-      <!--  <script src="permissions.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             //app.initialize();
@@ -119,49 +92,6 @@
         					</button>
         				</div>
         			</div>
-
-              <div id="mck-search-tabview-box" class="mck-search-tab-box mck-row">
-                <div class="blk-lg-12">
-                  <ul class="mck-nav mck-nav-panel">
-                    <li class="mck-tabview-item mck-nav-divider hide">
-                      <a id="mck-group-search-tabview" class="mck-nav-link mck-tabview" data-options='{"tabname":"Conversations"}' href="#">
-                        <strong>Chats</strong>
-                        <!-- Todo: replace icon here -->
-                        <!--<img src="../images/mck-icon-group.png" width="50px" height="30px">-->
-                      </a>
-                    </li>
-                    <li class="mck-tabview-item mck-nav-divider">
-                      <a id="mck-group-search-tabview" class="mck-nav-link mck-tabview active" data-options='{"tabname":"Group"}' data-mck-groupcategory="group" href="#">
-                        <strong>Group</strong>
-                        <!-- Todo: replace icon here -->
-                        <!--<img src="../images/mck-icon-group.png" width="50px" height="30px">-->
-                      </a>
-                    </li>
-                    <li class="mck-tabview-item mck-nav-divider">
-                      <a id="mck-open-search-tabview" class="mck-nav-link mck-tabview" data-options='{"tabname":"Game"}' data-mck-groupcategory="game" href="#">
-                          <strong>Game</strong>
-                          <!-- Todo: replace icon here -->
-                          <!--<img src="../images/mck-icon-games.png" width="50px" height="30px">-->
-                      </a>
-                    </li>
-                    <li class="mck-tabview-item mck-nav-divider">
-                      <a id="mck-drop-search-tabview" class="mck-nav-link mck-tabview" data-options='{"tabname":"Drop"}' data-mck-groupcategory="drop" href="#">
-                        <strong>Drop</strong>
-                        <!-- Todo: replace icon here -->
-                        <!--<img src="../images/mck-icon-drop.png" width="50px" height="30px">-->
-                      </a>
-                    </li>
-                    <li class="mck-tabview-item">
-                      <a id="mck-contact-search-tabview" class="mck-nav-link mck-tabview" data-options='{"tabname":"Chat"}' data-mck-grouptype="0" href="#">
-                        <strong>Chat</strong>
-                        <!-- Todo: replace icon here -->
-                        <!--<img src="../images/mck-icon-user.png" width="50px" height="30px">-->
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
         			<div id="mck-product-group"
         				class="mck-tab-panel mck-btn-group mck-product-group">
         				<div id="mck-product-box"
@@ -229,36 +159,13 @@
         									<a href="#" id="mck-btn-leave-group" class="menu-item"
         									title="Exit Group"> Exit Group </a>
         								</li>
-                                        <li id="li-mck-video-call">
-                                            <a href="#" id="mck-btn-video-call" class="menu-item"
-                                            title="Video Call"> Video Call </a>
-                                        </li>
         							</ul>
         						</div>
         					</div>
         				</div>
         			</div>
         			<div class="mck-box-body">
-                        <div id="mck-video-call-indicator" class ="applozic-launchar n-vis">
-            				<div  class="mck-row">
-                                <div id="mck-video-call-icon" class="blk-lg-3 mck-alpha-contact-image">
-                                        <span class="mck-contact-icon"></span>
-                                </div>
-                                
-                                <div id="mck-video-call-controls" class="blk-lg-9">
-                                <div id="mck-vid-btn"class="mck-row ">
-                                    <div id ="mck-video-call-indicator-txt" class ="blk-lg-9">
-                                    
-                                   </div>
-                                   </div>
-                                <div class="mck-row"> 
-                                <button id="mck-vid-receive-btn" class="mck-btn">accept</button>
-                                    <button id="mck-vid-reject-btn" class="mck-btn">reject</button>  </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div id="mck-message-cell" class="mck-tab-cell mck-message-cell">
+        				<div id="mck-message-cell" class="mck-tab-cell mck-message-cell">
         					<div id="mck-price-widget"
         						class="mck-row mck-price-widget mck-top-widget n-vis">
         						<div class="mck-widget-panel">
@@ -270,9 +177,7 @@
         							</button>
         						</div>
         					</div>
-        					<div class="mck-message-inner">
-							<ul id="mck-contact-list" class="mck-contact-list mck-nav mck-nav-tabs mck-nav-stacked"></ul>
-						</div>
+        					<div class="mck-message-inner"></div>
         					<div id="mck-contact-loading" class="mck-loading">
         						<img src="applozic/css/app/images/ring.gif"
         							alt="Loading" />
@@ -532,17 +437,6 @@
         										<option value="6">Open</option>
         									</select>
         								</div>
-
-                        <div class="blk-lg-12">
-                          <div id="mck-gc-type-label" class="mck-label">Category</div>
-                        </div>
-                        <div class="blk-lg-12">
-                          <select id="mck-group-metadata-category" class="mck-select">
-                            <option value="group" selected>Fans, Friends, others</option>
-                            <option value="game">Game</option>
-                            <option value="drop">Drop</option>
-                          </select>
-                        </div>
         							</div>
         						</div>
         						<div id="mck-group-create-btn-sec" class="mck-group-sub-sec">
@@ -750,36 +644,6 @@
         	</div>
         </div>
 
-        <div id ="mck-video-box">
-            <div class="container applozic-vid-container n-vis" >
-                    <div class= "row">
-                    <div id="mck-vid-media" class = "col-lg-12">
-                    <div id="mck-audio-call-icon center-block"></div>
-                    </div>
-                        
-                    </div>
-                </div>
-                <div id="mck-vid-div-overlay" class ="container applozic-vid-container n-vis">
-                    <div class="row mck-vid-overlay-header">
-                        <div id="mck-vid-icon" class="centered n-vis"> </div>
-                    </div>
-                    <div class="row mck-vid-overlay-footer">
-                        <div class="col-sm-8 left">
-                            <div class ="row footer-controls">
-                            <button id = "accept" class="btn-controls col-sm-2 col-sm-offset-3 n-vis" >button1</button>
-                            <button id = "accept" class="btn-controls col-sm-2 n-vis" >button3</button>
-                            <button id = "mck-vid-disconnect" class="btn-controls col-sm-2" >Disconnect</button>
-                            </div>
-                        </div>
-                        <div class=" row col-sm-4 right">
-                        
-                            <div id ="local-media" class="col-sm-6 col-sm-offset-3 n-vis" ></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
       	<script type="text/javascript" src="applozic/js/mck-ui-plugins.min.js"></script>
       	<script type="text/javascript" src="applozic/js/mck-ui-widget.min.js"></script>
       	<script type="text/javascript" src="applozic/js/mck-emojis.min.js"></script>
@@ -787,23 +651,8 @@
       	<script type="text/javascript"
       		src="https://maps.google.com/maps/api/js?key=AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4&libraries=places"></script>
       	<script type="text/javascript" src="applozic/js/locationpicker.jquery.min.js"></script>
-
-      
-      <!--  <script src="//media.twiliocdn.com/sdk/js/video/releases/1.0.0-beta2/twilio-video.js"></script> -->
-
-        <script type="text/javascript" src="applozic/js/app/twilio-video.js"></script>
-
       	<script type="text/javascript" src="applozic/js/app/mck-common-1.0.js"></script>
-        <script type="text/javascript" src="applozic/js/app/mck-sidebox-1.0.js"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.min.js"></script>
-
-        <script type="text/javascript" src="applozic/js/app/videocall.js"></script>
-        <script type="text/javascript" src="applozic/js/app/applozic-calling-service.js"></script>
-        <script type="text/javascript" src="applozic/js/app/mck-ringtone-service.js"></script>
-
-        <script type="text/javascript" src="applozic/js/app/applozic-camera.js"></script>
-
+      	<script type="text/javascript" src="applozic/js/app/mck-sidebox-1.0.js"></script>
       	<script type="text/javascript">
       		var oModal = "";
       		if (typeof $original !== 'undefined') {
@@ -843,20 +692,16 @@
                     return contact.imageLink;
                 }
             }
-
-            var applozicCameraService = new ApplozicCameraService();
-
+            //callback function execute after plugin initialize.
+            function onInitialize(status) {
+                if (status === 'success') {
+                    //write your logic exectute after plugin initialize.
+                }
+            }
             $(document).ready(function () {
-                app.initialize();
                 $("#chat-form").on('submit', function () {
-                    console.log("called");
                     //Function to initialize chat plugin
-                    $applozic.fn.applozic({
-                        baseUrl:'https://apps.applozic.com',
-                        userId: $("#userId").val(), 
-                        userName: 'Demo User', 
-                        appId: 'applozic-sample-app',
-        				accessToken: '123456',
+                    $applozic.fn.applozic({baseUrl:'https://apps.applozic.com',userId: $("#userId").val(), userName: 'Demo User', appId: 'applozic-sample-app',
                         ojq: $original,
                         obsm: oModal,
                         readConversation: readMessage, // readMessage function defined above
@@ -865,20 +710,14 @@
                         maxAttachmentSize: 25, //max attachment size in MB
                         notificationIconLink: "https://www.applozic.com/resources/images/applozic_icon.png",
                         desktopNotification: true,
-                        locShare: true,
-                        video: true,
+                        locShare: false,
                         googleApiKey: "AIzaSyDKfWHzu9X7Z2hByeW4RRFJrD9SizOzZt4",
                         groupUserCount: true,
                         onInit: function (response) {
                             if (response === 'success') {//callback function execute on plugin initialize
-                                $applozic.fn.applozic('loadTabView', {'groupCategory': 'group'});
-                                //$applozic.fn.applozic('loadTab', '');
+                                $applozic.fn.applozic('loadTab', '');
                                 registerPushNotifications();
                             }
-
-                            applozicCameraService.setPictureSource(navigator.camera.PictureSourceType);
-                            applozicCameraService.setDestinationType(navigator.camera.DestinationType);
-
                         }
                     });
 
