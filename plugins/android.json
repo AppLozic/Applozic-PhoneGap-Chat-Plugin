@@ -67,10 +67,8 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.applozic.phonegap"
         },
-        "cordova-plugin-keyboard": {
-            "PACKAGE_NAME": "com.applozic.phonegap"
-        },
-        "ionic-plugin-keyboard": {
+        "phonegap-plugin-push": {
+            "SENDER_ID": "195932243324",
             "PACKAGE_NAME": "com.applozic.phonegap"
         }
     },

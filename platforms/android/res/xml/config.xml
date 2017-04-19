@@ -62,15 +62,8 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="Keyboard">
-        <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
-        <param name="onload" value="true" />
-    </feature>
-    <feature name="ApplozicWrapper">
-        <param name="android-package" value="com.applozic.phonegap.wrapper.ApplozicWrapper" />
-    </feature>
-    <feature name="Keyboard">
-        <param name="android-package" onload="true" value="org.apache.cordova.labs.keyboard.Keyboard" />
+    <feature name="PushNotification">
+        <param name="android-package" value="com.adobe.phonegap.push.PushPlugin" />
     </feature>
     <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
     <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
@@ -97,8 +90,6 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="HideKeyboardFormAccessoryBar" value="true" />
-    <preference name="KeyboardShrinksView" value="false" />
     <icon src="icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

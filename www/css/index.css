@@ -5,17 +5,13 @@
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-/*    -webkit-user-select: none;          */        /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
     width:100%;
-}
-
-*[contenteditable] {
-    -webkit-user-select: auto !important;
 }
 
 /* Portrait layout (default) */
@@ -128,11 +124,11 @@ btn {
     width: 100%;
 }
 
-/*
+
 label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
     letter-spacing: 0.5px;
-}*/
+}

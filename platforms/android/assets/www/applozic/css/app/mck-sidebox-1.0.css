@@ -24,16 +24,6 @@
 	color: #333;
 }
 
-.mck-download-btn {
-    background-image: url(../../../images/download.png);
-	width: 10px ;
-    height: 10px;
-    padding:5px;
-    position: absolute;
-	overflow: hidden;
-    background-size: 20px;
-}
-
 .mck-sidebox {
 	position: fixed !important;
 	height: 100% !important;
@@ -47,7 +37,6 @@
 	border-radius: 0 !important;
 	line-height: 18px;
 	min-width: 310px;
-	-webkit-transform: translate3d(0,0,0);
 }
 
 .mck-box .mck-row {
@@ -456,29 +445,29 @@
 	box-shadow: 0 8px 17px rgba(0, 0, 0, 0.2);
 }
 
-.mck-fade {
+.fade {
 	opacity: 0;
 	-webkit-transition: opacity .15s linear;
 	-o-transition: opacity .15s linear;
 	transition: opacity .15s linear;
 }
 
-.mck-box .mck-box-backdrop.mck-fade {
+.mck-box .mck-box-backdrop.fade {
 	filter: alpha(opacity = 0);
 	opacity: 0;
 }
 
-.mck-fade.in {
-	opacity: 1 !important;
+.fade.in {
+	opacity: 1;
 	background: transparent !important;
 }
 
-.mck-box.mck-fade.in {
+.mck-box.fade.in {
 	width: 100%;
 }
 
-.mck-sidebox.mck-fade.in {
-	width: 100%;
+.mck-sidebox.fade.in {
+	width: 310px;
 }
 
 .mck-box .mck-box-backdrop.in {
@@ -487,7 +476,7 @@
 }
 
 .mck-sidebox .mck-box-backdrop.in {
-	width: 100%;
+	width: 310px;
 	right: 0;
 	left: auto;
 }
@@ -530,7 +519,7 @@
 	text-align: center;
 }
 
-.mck-box.mck-fade .mck-box-dialog {
+.mck-box.fade .mck-box-dialog {
 	-webkit-transition: -webkit-transform .3s ease-out;
 	-o-transition: -o-transform .3s ease-out;
 	transition: transform .3s ease-out;
@@ -547,7 +536,7 @@
 	transform: translate(0, 0);
 }
 
-.mck-box.mck-fade .mck-right {
+.mck-box.fade .mck-right {
 	-webkit-transform: translate3d(80%, 0, 0);
 	transform: translate3d(80%, 0, 0);
 	-webkit-transition: -webkit-transform .4s
@@ -887,18 +876,11 @@
 	padding: 0 10px;
 }
 
-.mck-box .mck-nav-panel .mck-tabview-item {
-	float: left;
-	text-align: center;
-	width: calc(25% - 22px);
-	padding: 0 10px;
-}
-
 .mck-nav-divider {
 	border-right: 2px solid #e5e5e5;
 }
 
-.mck-box  .mck-nav-panel .mck-nav-link, .mck-box .mck-tabview .mck-nav-link {
+.mck-box  .mck-nav-panel .mck-nav-link {
 	display: block;
 	padding: 5px 0;
 	color: #333;
@@ -906,7 +888,7 @@
 	text-transform: uppercase;
 }
 
-.mck-box  .mck-nav-panel .mck-nav-link:hover, .mck-box .mck-nav-panel .mck-nav-link:focus, .mck-box .mck-tabview .mck-nav-link:hover, .mck-box .mck-tabview .mck-nav-link:focus
+.mck-box  .mck-nav-panel .mck-nav-link:hover, .mck-box .mck-nav-panel .mck-nav-link:focus
 	{
 	color: #11b8bb;
 	background-color: inherit;
@@ -2286,8 +2268,8 @@ mck-sidebox .mck-dropdown-menu>li>a:focus, .mck-dropup-menu>li>a:focus,
 	text-align: center;
 	font-size: 10px;
 	z-index: 100;
-	display: block;
-	color: #FFFFFF;
+		display: block;
+		color: #FFFFFF;
 }
 
 .mck-unread-count-box {
