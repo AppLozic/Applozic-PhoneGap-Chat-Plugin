@@ -159,14 +159,21 @@
         "is_top_level": true,
         "variables": {}
     },
-    "phonegap-plugin-push": {
+    "cordova-plugin-keyboard": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-push"
+            "id": "cordova-plugin-keyboard"
         },
         "is_top_level": true,
-        "variables": {
-            "SENDER_ID": "195932243324"
-        }
+        "variables": {}
+    },
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/driftyco/ionic-plugins-keyboard.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

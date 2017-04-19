@@ -24,16 +24,27 @@ apply plugin: 'android'
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
 
     // Switch the Android Gradle plugin version requirement depending on the
     // installed version of Gradle. This dependency is documented at
     // http://tools.android.com/tech-docs/new-build-system/version-compatibility
     // and https://issues.apache.org/jira/browse/CB-8143
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
+    if (gradle.gradleVersion >= "2.2") {
+        dependencies {
+            classpath 'com.android.tools.build:gradle:1.0.0+'
+        }
+    } else if (gradle.gradleVersion >= "2.1") {
+        dependencies {
+            classpath 'com.android.tools.build:gradle:0.14.0+'
+        }
+    } else {
+        dependencies {
+            classpath 'com.android.tools.build:gradle:0.12.0+'
+        }
     }
-   }
+}
 
 // Allow plugins to declare Maven dependencies via build-extras.gradle.
 repositories {
@@ -41,7 +52,7 @@ repositories {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+    gradleVersion = '2.2.1'
 }
 
 // Configuration properties. Set these via environment variables, build-extras.gradle, or gradle.properties.
@@ -86,7 +97,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "phonegap-plugin-push/phonegap-push.gradle"
+apply from: "cordova-plugin-applozic/phonegap-applozic-sdk.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -164,15 +175,9 @@ android {
 
     defaultConfig {
         versionCode cdvVersionCode ?: Integer.parseInt("" + privateHelpers.extractIntFromManifest("versionCode") + "0")
-        applicationId privateHelpers.extractStringFromManifest("package")
-
         if (cdvMinSdkVersion != null) {
             minSdkVersion cdvMinSdkVersion
         }
-    }
-
-    lintOptions {
-      abortOnError false;
     }
 
     compileSdkVersion cdvCompileSdkVersion
@@ -242,8 +247,7 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     debugCompile project(path: "CordovaLib", configuration: "debug")
     releaseCompile project(path: "CordovaLib", configuration: "release")
-    compile "com.android.support:support-v13:23+"
-    compile "com.google.android.gms:play-services-gcm:+"
+    compile "com.android.support:appcompat-v7:25.1.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 

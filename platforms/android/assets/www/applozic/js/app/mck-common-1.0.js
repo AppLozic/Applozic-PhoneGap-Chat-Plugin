@@ -260,7 +260,8 @@ function MckGroupUtils() {
             'userCount': group.userCount,
             'removedMembersId': removedMembersId,
             'clientGroupId': group.clientGroupId,
-            'isGroup': true
+            'isGroup': true,
+            'deletedAtTime' :group.deletedAtTime
         };
         MCK_GROUP_MAP[group.id] = groupFeed;
         if (group.clientGroupId) {
@@ -281,7 +282,9 @@ function MckGroupUtils() {
             'users': [],
             'removedMembersId': [],
             'clientGroupId': '',
-            'isGroup': true
+            'isGroup': true,
+            'deletedAtTime':''
+            
         };
         MCK_GROUP_MAP[groupId] = group;
         return group;
@@ -815,6 +818,23 @@ function MckDateUtils() {
     _this.getSystemDate = function(time) {
         var date = new Date(parseInt(time, 10));
         return dateFormat(date, fullDateFormat, false);
+    };
+    _this.convertMilisIntoTime= function(millisec){
+    	var duration;
+         var milliseconds = parseInt((millisec%1000)/100),
+        seconds = parseInt((millisec/1000)%60),
+        minutes = parseInt((millisec/(1000*60))%60),
+        hours = parseInt((millisec/(1000*60*60))%24);
+         
+        if(hours>0){
+        	duration= hours + " Hr " + minutes + " Min " + seconds + " Sec";
+        }else if(minutes>0){
+        	duration= minutes + " Min " + seconds + " Sec";
+        }else{
+        	duration= seconds + " Sec ";
+        }
+        return duration;
+
     };
     var dateFormat = function() {
         var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,

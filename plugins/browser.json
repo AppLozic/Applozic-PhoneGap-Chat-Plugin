@@ -7,8 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "phonegap-plugin-push": {
-            "SENDER_ID": "195932243324",
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "com.applozic.phonegap"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.applozic.phonegap"
         }
     },

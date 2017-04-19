@@ -6,6 +6,10 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="KeyboardShrinksView" value="false" />
+
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
     <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
     <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
@@ -26,9 +30,10 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <plugin name="phonegap-plugin-push" spec="1.6.0">
+   <!-- <plugin name="phonegap-plugin-push" spec="2.0.0-rc2">
 	    <variable name="SENDER_ID" value="195932243324" />
 	</plugin>
+-->
     <icon src="icon.png" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
