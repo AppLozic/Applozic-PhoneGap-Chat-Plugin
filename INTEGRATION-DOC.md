@@ -1,3 +1,14 @@
+Applozic provides the following 2 ways to integrate Chat into PhoneGap apps:
+
+1. Cordova plugin.
+2. Web based (html, javascript, css) based Chat for Ionic and 
+
+Dependending on your project, you can choose either of the two.
+
+### Cordova Chat Plugin
+
+For Cordova plugin, refer to the documentation at: https://github.com/AppLozic/Applozic-Cordova-PhoneGap-Chat-Plugin/blob/master/README.md
+
 
 #### Step 1: Add plugin
 Copy [applozic folder](https://github.com/AppLozic/Applozic-PhoneGap-Chat-Plugin/tree/master/www/applozic) containing js and css files into your project folder.
