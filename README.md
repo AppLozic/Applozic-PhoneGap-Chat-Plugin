@@ -1,3 +1,20 @@
+
+Checkout the new plugin for phonegap which have native look and feel
+
+https://github.com/AppLozic/Applozic-Cordova-Ionic-PhoneGap-Chat-Plugin
+
+
+
+
+
+
+
+
+
+
+
+Documentation for PhoneGap 1.0 version plugin for HTML, Javascript interface.
+________________________________________________________________________________________________________________________
 # Applozic-PhoneGap-Chat-Plugin
 PhoneGap Real Time Chat & Messaging Plugin 
 
