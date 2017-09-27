@@ -899,7 +899,8 @@ var MCK_CLIENT_GROUP_MAP = [];
                     'to': $applozic.trim(params.to),
                     'type': params.messageType,
                     'contentType': params.type,
-                    'message': message
+                    'message': message,
+                    'metadata': params.metadata
                 };
                 mckMessageService.sendMessage(messagePxy);
                 return 'success';
@@ -2272,7 +2273,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                 }
                 messagePxy.source = MCK_SOURCE;
                 var $mck_msg_div = $applozic("#mck-message-cell .mck-message-inner div[name='message']." + randomId);
-                messagePxy.metadata = MCK_DEFAULT_MESSAGE_METADATA;
+                messagePxy.metadata = (messagePxy.metadata)? messagePxy.metadata:MCK_DEFAULT_MESSAGE_METADATA;
                 mckUtils.ajax({
                     type: 'POST',
                     url: MCK_BASE_URL + MESSAGE_SEND_URL,
