@@ -1327,6 +1327,7 @@ mck-sidebox .mck-dropdown-menu>li>a:focus, .mck-dropup-menu>li>a:focus,
 	border-radius: 4px;
 	box-shadow: none !important;
 	-webkit-user-select: text;
+	-webkit-overflow-scrolling: auto;
 }
 
 .mck-text-box-panel {
