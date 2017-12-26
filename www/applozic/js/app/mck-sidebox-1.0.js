@@ -78,6 +78,7 @@ var MCK_CLIENT_GROUP_MAP = [];
             'file.attach.title': 'Attach File',
             'last.seen': 'Last seen',
             'last.seen.on': 'Last seen on',
+            'user.delete':'This user has been deleted',
             'ago': 'ago',
             'group.metadata': {
                 'CREATE_GROUP_MESSAGE': ':adminName created group :groupName',
@@ -376,6 +377,7 @@ var MCK_CLIENT_GROUP_MAP = [];
         var mckContactService = new MckContactService();
         var mckNotificationService = new MckNotificationService();
         var $mckChatLauncherIcon = $applozic('.chat-launcher-icon');
+        var isUserDeleted;
         w.MCK_OL_MAP = new Array();
         _this.events = {
             'onConnectFailed': function() {},
@@ -2138,9 +2140,19 @@ var MCK_CLIENT_GROUP_MAP = [];
                     $applozic('.mcktypeahead.mck-dropdown-menu').hide();
                 });
             };
-            _this.sendMessage = function(messagePxy) {
+            _this.sendMessage = function (messagePxy) {
                 if (typeof messagePxy !== 'object') {
                     return;
+                }
+                if (messagePxy.to) {
+                    if (MCK_USER_DETAIL_MAP[messagePxy.to].deletedAtTime || isUserDeleted === "true") {
+                        $mck_msg_error.html(MCK_LABELS['user.delete']);
+                        $mck_msg_error.removeClass('n-vis').addClass('vis');
+                        $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
+                        $applozic("#mck-msg-form").removeClass('vis').addClass('n-vis');
+                        $li_mck_block_user.removeClass('vis').addClass('n-vis');
+                        return;
+                    }
                 }
                 if (messagePxy.message.length === 0 && FILE_META.length === 0) {
                     $mck_text_box.addClass("mck-text-req");
@@ -2549,6 +2561,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     global: false,
                     success: function(data) {
                         var isMessages = true;
+                        isUserDeleted ="";
                         var currTabId = $mck_msg_inner.data('mck-id');
                         var isGroupTab = $mck_msg_inner.data('isgroup');
                         if (!params.isGroup || params.startTime) {
@@ -2636,6 +2649,16 @@ var MCK_CLIENT_GROUP_MAP = [];
                                                 }
                                             }
                                         });
+                                    }
+                                    if (currTabId) {
+                                        if (MCK_USER_DETAIL_MAP[currTabId].deletedAtTime || isUserDeleted === "true") {
+                                            $mck_msg_error.html(MCK_LABELS['user.delete']);
+                                            $mck_msg_error.removeClass('n-vis').addClass('vis');
+                                            $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
+                                            $mck_msg_form.removeClass('vis').addClass('n-vis');
+                                            $li_mck_block_user.removeClass('vis').addClass('n-vis');
+                                            return;
+                                        }
                                     }
                                     if (IS_OFFLINE_MESSAGE_ENABLED && !params.isGroup && !params.startTime && !w.MCK_OL_MAP[params.tabId]) {
                                         mckInit.manageOfflineMessageTime(params.tabId);
@@ -7181,6 +7204,14 @@ var MCK_CLIENT_GROUP_MAP = [];
                         events.onMessageRead({
                             'messageKey': resp.message.split(",")[0]
                         });
+                    } else if (messageType === 'APPLOZIC_34') {
+                        $applozic("#mck-msg-error").html(MCK_LABELS['user.delete']);
+                        $applozic("#mck-msg-error").removeClass('n-vis').addClass('vis');
+                        $applozic("#mck-msg-form").removeClass('vis').addClass('n-vis');
+                        $li_mck_block_user.removeClass('vis').addClass('n-vis');
+                        $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
+                        isUserDeleted = "true";
+                        return;
                     } else if (messageType === "APPLOZIC_05") {
                         var key = resp.message.split(",")[0];
                         var tabId = resp.message.split(",")[1];
