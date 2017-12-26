@@ -2145,11 +2145,10 @@ var MCK_CLIENT_GROUP_MAP = [];
                     return;
                 }
                 if (messagePxy.to) {
-                    if (MCK_USER_DETAIL_MAP[messagePxy.to].deletedAtTime || isUserDeleted === "true") {
-                        $mck_msg_error.html(MCK_LABELS['user.delete']);
-                        $mck_msg_error.removeClass('n-vis').addClass('vis');
+                    if (MCK_USER_DETAIL_MAP[messagePxy.to].deletedAtTime || isUserDeleted === true) {
+                        $mck_msg_error.html(MCK_LABELS['user.delete']).removeClass('n-vis').addClass('vis');
                         $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
-                        $applozic("#mck-msg-form").removeClass('vis').addClass('n-vis');
+                        $mck_msg_form.removeClass('vis').addClass('n-vis');
                         $li_mck_block_user.removeClass('vis').addClass('n-vis');
                         return;
                     }
@@ -2651,9 +2650,8 @@ var MCK_CLIENT_GROUP_MAP = [];
                                         });
                                     }
                                     if (currTabId) {
-                                        if (MCK_USER_DETAIL_MAP[currTabId].deletedAtTime || isUserDeleted === "true") {
-                                            $mck_msg_error.html(MCK_LABELS['user.delete']);
-                                            $mck_msg_error.removeClass('n-vis').addClass('vis');
+                                        if (MCK_USER_DETAIL_MAP[currTabId].deletedAtTime || isUserDeleted === true) {
+                                            $mck_msg_error.html(MCK_LABELS['user.delete']).removeClass('n-vis').addClass('vis');
                                             $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
                                             $mck_msg_form.removeClass('vis').addClass('n-vis');
                                             $li_mck_block_user.removeClass('vis').addClass('n-vis');
@@ -7205,12 +7203,11 @@ var MCK_CLIENT_GROUP_MAP = [];
                             'messageKey': resp.message.split(",")[0]
                         });
                     } else if (messageType === 'APPLOZIC_34') {
-                        $applozic("#mck-msg-error").html(MCK_LABELS['user.delete']);
-                        $applozic("#mck-msg-error").removeClass('n-vis').addClass('vis');
-                        $applozic("#mck-msg-form").removeClass('vis').addClass('n-vis');
-                        $li_mck_block_user.removeClass('vis').addClass('n-vis');
+                        $applozic("#mck-msg-error").html(MCK_LABELS['user.delete']).removeClass('n-vis').addClass('vis');
                         $applozic("#mck-tab-status").removeClass('vis').addClass('n-vis');
-                        isUserDeleted = "true";
+                        $applozic("#mck-msg-form").removeClass('vis').addClass('n-vis');
+                        $applozic("#li-mck-block-user").removeClass('vis').addClass('n-vis');
+                        isUserDeleted = true;
                         return;
                     } else if (messageType === "APPLOZIC_05") {
                         var key = resp.message.split(",")[0];
