@@ -377,7 +377,7 @@ var MCK_CLIENT_GROUP_MAP = [];
         var mckContactService = new MckContactService();
         var mckNotificationService = new MckNotificationService();
         var $mckChatLauncherIcon = $applozic('.chat-launcher-icon');
-        var isUserDeleted;
+        var isUserDeleted = false;
         w.MCK_OL_MAP = new Array();
         _this.events = {
             'onConnectFailed': function() {},
@@ -2560,7 +2560,7 @@ var MCK_CLIENT_GROUP_MAP = [];
                     global: false,
                     success: function(data) {
                         var isMessages = true;
-                        isUserDeleted ="";
+                        isUserDeleted = false;
                         var currTabId = $mck_msg_inner.data('mck-id');
                         var isGroupTab = $mck_msg_inner.data('isgroup');
                         if (!params.isGroup || params.startTime) {
